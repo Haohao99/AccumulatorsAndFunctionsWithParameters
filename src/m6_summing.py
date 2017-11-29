@@ -4,9 +4,9 @@ in its simplest classic forms:
    SUMMING:       total = total + number
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
-
+         their colleagues and Hao Hu.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
+import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -24,10 +24,16 @@ def run_test_sum_cosines():
     # Use the same 4-step process as in implementing previous
     # TEST functions, including the same way to print expected/actual.
     # ------------------------------------------------------------------
-    print()
     print('--------------------------------------------------')
     print('Testing the   sum_cosines   function:')
     print('--------------------------------------------------')
+
+    #Test 1
+    n = 4
+    expect = 0.13416
+    actual = sum_cosines(n)
+    print('expected :',expect)
+    print('actual :',actual)
 
 
 def sum_cosines(n):
@@ -40,6 +46,11 @@ def sum_cosines(n):
       If n is 3, this function returns
         cos(0) + cos(1) + cos(2) + cos(3)   which is about 0.13416.
     """
+    answer = 0
+    for k in range(n):
+        answer =  round(answer + math.cos(k),5)
+
+    return answer
     # ------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
